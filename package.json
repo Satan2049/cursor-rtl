@@ -1,0 +1,107 @@
+{
+  "name": "cursor-rtl",
+  "displayName": "Cursor RTL Chat",
+  "description": "Smart multi-language RTL support for Cursor AI Chat. Auto-detects Hebrew, Arabic, and Persian text direction per element while keeping code blocks in LTR.",
+  "version": "1.0.2",
+  "publisher": "Satan2049",
+  "license": "MIT",
+  "icon": "resources/icon.png",
+  "homepage": "https://github.com/Satan2049/cursor-rtl#readme",
+  "bugs": {
+    "url": "https://github.com/Satan2049/cursor-rtl/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Satan2049/cursor-rtl.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "rtl",
+    "arabic",
+    "hebrew",
+    "persian",
+    "farsi",
+    "cursor",
+    "chat",
+    "right-to-left",
+    "bidi",
+    "bidirectional"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursorRtl.enable",
+        "title": "Cursor RTL: Enable RTL Support"
+      },
+      {
+        "command": "cursorRtl.disable",
+        "title": "Cursor RTL: Disable RTL Support"
+      },
+      {
+        "command": "cursorRtl.status",
+        "title": "Cursor RTL: Check Status"
+      },
+      {
+        "command": "cursorRtl.reapply",
+        "title": "Cursor RTL: Re-apply After Update"
+      },
+      {
+        "command": "cursorRtl.toggle",
+        "title": "Cursor RTL: Toggle RTL Support"
+      }
+    ],
+    "configuration": {
+      "title": "Cursor RTL",
+      "properties": {
+        "cursorRtl.autoReapply": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically re-apply the RTL patch when Cursor updates overwrite main.js"
+        },
+        "cursorRtl.showStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show RTL status indicator in the status bar"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "compile": "npm run build",
+    "pretest": "npm run build && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "package": "npm run build && npx @vscode/vsce package --no-dependencies",
+    "checksum": "node scripts/checksum.mjs",
+    "release:prepare": "npm run package && npm run checksum",
+    "vscode:uninstall": "node dist/uninstall.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "24.x",
+    "@types/vscode": "^1.85.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.0.0",
+    "@vscode/vsce": "^3.7.1",
+    "esbuild": "^0.25.0",
+    "eslint": "^10.5.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
+  },
+  "overrides": {
+    "diff": "^8.0.4",
+    "serialize-javascript": "^7.0.6"
+  }
+}
