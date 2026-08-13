@@ -1,6 +1,6 @@
 # Cursor RTL Chat
 
-Smart multi-language **Right-to-Left (RTL)** support for the **Cursor IDE** chat panel. Hebrew, Arabic, and Persian text is automatically right-aligned while English and code blocks stay left-to-right.
+Smart multi-language **Right-to-Left (RTL)** support for **Cursor IDE** chat, Plan files, and Markdown editors. Hebrew, Arabic, and Persian text is automatically right-aligned while English and code blocks stay left-to-right.
 
 ![Extension icon](resources/icon.png)
 
@@ -10,6 +10,7 @@ Smart multi-language **Right-to-Left (RTL)** support for the **Cursor IDE** chat
 - **Mixed-language support** — Hebrew/Arabic/Persian paragraphs align right; English-heavy content stays left
 - **Code-safe** — code blocks, terminals, tool calls, and UI controls remain LTR
 - **Plan editor support** — RTL works in Cursor Plan markdown views
+- **Markdown editor support** — per-line RTL in the Markdown source editor, Cursor's native **Preview | Markdown** editor, and the classic side preview. Only RTL-language lines align right; English stays left
 - **Status bar indicator** — click to enable, disable, or check status
 - **Auto-reapply** — restores the patch automatically after Cursor updates (configurable)
 
@@ -22,12 +23,12 @@ Smart multi-language **Right-to-Left (RTL)** support for the **Cursor IDE** chat
 
 ### From GitHub Release (recommended)
 
-1. Download [`cursor-rtl-1.0.1.vsix`](https://github.com/Satan2049/cursor-rtl/releases/download/v1.0.1/cursor-rtl-1.0.1.vsix) from [Releases](https://github.com/Satan2049/cursor-rtl/releases)
+1. Download [`cursor-rtl-1.1.2.vsix`](https://github.com/Satan2049/cursor-rtl/releases/download/v1.1.2/cursor-rtl-1.1.2.vsix) from [Releases](https://github.com/Satan2049/cursor-rtl/releases)
 2. Verify SHA256 (see [checksums.sha256](checksums.sha256))
 3. Install:
 
 ```powershell
-cursor --install-extension cursor-rtl-1.0.1.vsix
+cursor --install-extension cursor-rtl-1.1.2.vsix
 ```
 
 Or press **Ctrl+Shift+P** → **Extensions: Install from VSIX...** → select the file.
@@ -84,20 +85,20 @@ Press **F5** in Cursor for development, or install the generated `.vsix`.
 Verify downloads with SHA256:
 
 ```powershell
-Get-FileHash -Path cursor-rtl-1.0.1.vsix -Algorithm SHA256
+Get-FileHash -Path cursor-rtl-1.1.2.vsix -Algorithm SHA256
 ```
 
-Expected hash for v1.0.1:
+Expected hash for v1.1.2:
 
 ```
-289E2A32B748983DAD716EEFCC0A53B931DC57EE56025D0998CAFDAB538753CB
+1FEFFE27E1E67AD4DA938817983ACDF527BB6CD81809F7BC0D1C7B27992F2C6D
 ```
 
 Official checksums: [checksums.sha256](checksums.sha256)
 
-Pre-release build scanned clean on VirusTotal (0 detections):
+v1.1.2 scanned clean on VirusTotal (0 detections):
 
-https://www.virustotal.com/gui/file/fa7f00cc49ddb862dd68887dcc9b46d79aa4fd202fb6fd9f16aa39b3e67ff1ca
+https://www.virustotal.com/gui/file/1feffe27e1e67ad4da938817983acdf527bb6cd81809f7bc0d1c7b27992f2c6d
 
 ## How it works
 
@@ -107,6 +108,8 @@ This extension patches Cursor's `main.js` to load a small Electron loader. The l
 2. Scores RTL vs LTR characters per text block
 3. Applies `direction: rtl` / `text-align: start` to matching elements
 4. Keeps code blocks, Monaco editors, and tool UI in LTR
+
+The same runtime also styles Cursor's native **Preview | Markdown** editor (without writing `dir` into ProseMirror-owned DOM). The classic Markdown side preview is styled separately through VS Code `markdown.previewStyles` / `markdown.previewScripts` contributions.
 
 Original `main.js` is backed up before patching. Disabling restores from backup.
 

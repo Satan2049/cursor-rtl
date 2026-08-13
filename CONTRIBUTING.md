@@ -17,8 +17,8 @@ Press **F5** in Cursor to launch Extension Development Host.
 
 ```bash
 git add .
-git commit -m "Release v1.0.0"
-git tag v1.0.0
+git commit -m "Release v1.1.2"
+git tag v1.1.2
 git push origin main --tags
 ```
 
@@ -30,7 +30,7 @@ git push origin main --tags
 
 ```bash
 npx ovsx create-namespace cursor-rtl -p YOUR_TOKEN
-npx ovsx publish cursor-rtl-1.0.0.vsix -p YOUR_TOKEN
+npx ovsx publish cursor-rtl-1.1.2.vsix -p YOUR_TOKEN
 ```
 
 Sign in at https://open-vsx.org with GitHub and create a token at https://open-vsx.org/user-settings/tokens

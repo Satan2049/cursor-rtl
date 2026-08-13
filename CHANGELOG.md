@@ -2,6 +2,19 @@
 
 All notable changes to the "cursor-rtl" extension will be documented in this file.
 
+## [1.1.2] - 2026-08-13
+
+### Added
+
+- RTL for Cursor's native **Preview | Markdown** editor (TipTap/ProseMirror), using the same CSS-based direction as Plan files
+- RTL for the classic Markdown side preview via `markdown.previewStyles` / `markdown.previewScripts`
+- Per-line RTL in the Monaco Markdown source editor: only Hebrew/Arabic/Persian lines align right; English lines stay left
+
+### Fixed
+
+- Markdown RTL lines update immediately while typing (no left-then-right flash)
+- RTL markdown lines are inset from the right editor edge
+
 ## [1.0.2] - 2026-06-26
 
 ### Fixed

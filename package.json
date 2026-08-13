@@ -1,8 +1,8 @@
 {
   "name": "cursor-rtl",
   "displayName": "Cursor RTL Chat",
-  "description": "Smart multi-language RTL support for Cursor AI Chat. Auto-detects Hebrew, Arabic, and Persian text direction per element while keeping code blocks in LTR.",
-  "version": "1.0.2",
+  "description": "Smart multi-language RTL support for Cursor AI Chat, Plan files, and Markdown editors. Auto-detects Hebrew, Arabic, and Persian text direction per element while keeping code blocks in LTR.",
+  "version": "1.1.2",
   "publisher": "Satan2049",
   "license": "MIT",
   "icon": "resources/icon.png",
@@ -28,6 +28,7 @@
     "farsi",
     "cursor",
     "chat",
+    "markdown",
     "right-to-left",
     "bidi",
     "bidirectional"
@@ -58,6 +59,12 @@
         "command": "cursorRtl.toggle",
         "title": "Cursor RTL: Toggle RTL Support"
       }
+    ],
+    "markdown.previewStyles": [
+      "./resources/markdown-preview-rtl.css"
+    ],
+    "markdown.previewScripts": [
+      "./resources/markdown-preview-rtl.js"
     ],
     "configuration": {
       "title": "Cursor RTL",

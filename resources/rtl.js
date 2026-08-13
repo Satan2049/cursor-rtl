@@ -60,7 +60,11 @@
         .plan-editor ul,
         .plan-editor ol,
         .ui-plan-editor ul,
-        .ui-plan-editor ol {
+        .ui-plan-editor ol,
+        .markdown-editor-react ul,
+        .markdown-editor-react ol,
+        .markdown-editor-react__richtext-content ul,
+        .markdown-editor-react__richtext-content ol {
             padding-inline-start: 20px !important;
             padding-inline-end: 0 !important;
         }
@@ -72,7 +76,11 @@
         .plan-editor strong,
         .plan-editor em,
         .ui-plan-editor strong,
-        .ui-plan-editor em {
+        .ui-plan-editor em,
+        .markdown-editor-react strong,
+        .markdown-editor-react em,
+        .markdown-editor-react__richtext-content strong,
+        .markdown-editor-react__richtext-content em {
             unicode-bidi: isolate !important;
         }
 
@@ -94,6 +102,8 @@
         .plan-editor .tiptap.ProseMirror table,
         .ui-plan-editor .tiptap.ProseMirror table,
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table,
+        .markdown-editor-react table,
+        .markdown-editor-react__richtext-content table,
         table.markdown-table {
             width: max-content !important;
             min-width: 100% !important;
@@ -132,6 +142,14 @@
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table td,
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table th > p,
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table td > p,
+        .markdown-editor-react table th,
+        .markdown-editor-react table td,
+        .markdown-editor-react table th > p,
+        .markdown-editor-react table td > p,
+        .markdown-editor-react__richtext-content table th,
+        .markdown-editor-react__richtext-content table td,
+        .markdown-editor-react__richtext-content table th > p,
+        .markdown-editor-react__richtext-content table td > p,
         .markdown-table th,
         .markdown-table td {
             unicode-bidi: plaintext !important;
@@ -158,6 +176,10 @@
         .ui-plan-editor .tiptap.ProseMirror table td > p,
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table th > p,
         .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror table td > p,
+        .markdown-editor-react table th > p,
+        .markdown-editor-react table td > p,
+        .markdown-editor-react__richtext-content table th > p,
+        .markdown-editor-react__richtext-content table td > p,
         .markdown-table th > p,
         .markdown-table td > p {
             border: 0 !important;
@@ -172,6 +194,29 @@
             direction: ltr !important;
             text-align: left !important;
             unicode-bidi: plaintext !important;
+        }
+
+        .monaco-editor .view-lines .view-line[dir="rtl"] {
+            direction: rtl !important;
+            text-align: right !important;
+            unicode-bidi: isolate !important;
+            box-sizing: border-box !important;
+            padding-right: 24px !important;
+        }
+
+        .monaco-editor .view-lines .view-line[dir="rtl"] > span {
+            margin-right: 24px !important;
+        }
+
+        .monaco-editor .view-lines .view-line[dir="ltr"] {
+            direction: ltr !important;
+            text-align: left !important;
+            unicode-bidi: isolate !important;
+            padding-right: 0 !important;
+        }
+
+        .monaco-editor .view-lines .view-line[dir="ltr"] > span {
+            margin-right: 0 !important;
         }
 
         .markdown-root code,
@@ -535,6 +580,24 @@
         .ui-rich-text-editor.plan-editor__richtext .ProseMirror > p,
         .ui-rich-text-editor.plan-editor__richtext .ProseMirror > blockquote,
         .ui-rich-text-editor.plan-editor__richtext .ProseMirror li > p,
+        .markdown-editor-react .ProseMirror > h1,
+        .markdown-editor-react .ProseMirror > h2,
+        .markdown-editor-react .ProseMirror > h3,
+        .markdown-editor-react .ProseMirror > h4,
+        .markdown-editor-react .ProseMirror > h5,
+        .markdown-editor-react .ProseMirror > h6,
+        .markdown-editor-react .ProseMirror > p,
+        .markdown-editor-react .ProseMirror > blockquote,
+        .markdown-editor-react .ProseMirror li > p,
+        .markdown-editor-react__richtext-content.ProseMirror > h1,
+        .markdown-editor-react__richtext-content.ProseMirror > h2,
+        .markdown-editor-react__richtext-content.ProseMirror > h3,
+        .markdown-editor-react__richtext-content.ProseMirror > h4,
+        .markdown-editor-react__richtext-content.ProseMirror > h5,
+        .markdown-editor-react__richtext-content.ProseMirror > h6,
+        .markdown-editor-react__richtext-content.ProseMirror > p,
+        .markdown-editor-react__richtext-content.ProseMirror > blockquote,
+        .markdown-editor-react__richtext-content.ProseMirror li > p,
         .tiptap.ProseMirror > h1,
         .tiptap.ProseMirror > h2,
         .tiptap.ProseMirror > h3,
@@ -603,6 +666,24 @@
         .tiptap.ProseMirror > blockquote[dir="rtl"],
         .tiptap.ProseMirror li[dir="rtl"],
         .tiptap.ProseMirror li > p[dir="rtl"],
+        .markdown-editor-react p[dir="rtl"],
+        .markdown-editor-react li[dir="rtl"],
+        .markdown-editor-react h1[dir="rtl"],
+        .markdown-editor-react h2[dir="rtl"],
+        .markdown-editor-react h3[dir="rtl"],
+        .markdown-editor-react h4[dir="rtl"],
+        .markdown-editor-react h5[dir="rtl"],
+        .markdown-editor-react h6[dir="rtl"],
+        .markdown-editor-react blockquote[dir="rtl"],
+        .markdown-editor-react__richtext-content p[dir="rtl"],
+        .markdown-editor-react__richtext-content li[dir="rtl"],
+        .markdown-editor-react__richtext-content h1[dir="rtl"],
+        .markdown-editor-react__richtext-content h2[dir="rtl"],
+        .markdown-editor-react__richtext-content h3[dir="rtl"],
+        .markdown-editor-react__richtext-content h4[dir="rtl"],
+        .markdown-editor-react__richtext-content h5[dir="rtl"],
+        .markdown-editor-react__richtext-content h6[dir="rtl"],
+        .markdown-editor-react__richtext-content blockquote[dir="rtl"],
         .ui-prompt-input-editor__input[dir="rtl"],
         .ui-prompt-input-editor__input > p[dir="rtl"],
         .ui-prompt-input-tiptap-readonly__content[dir="rtl"],
@@ -796,36 +877,117 @@
         '.tiptap.ProseMirror > p',
         '.tiptap.ProseMirror > blockquote',
         '.tiptap.ProseMirror li',
-        '.tiptap.ProseMirror li > p'
+        '.tiptap.ProseMirror li > p',
+        /* Cursor native Preview | Markdown editor */
+        '.markdown-editor-react h1',
+        '.markdown-editor-react h2',
+        '.markdown-editor-react h3',
+        '.markdown-editor-react h4',
+        '.markdown-editor-react h5',
+        '.markdown-editor-react h6',
+        '.markdown-editor-react p',
+        '.markdown-editor-react li',
+        '.markdown-editor-react blockquote',
+        '.markdown-editor-react ul',
+        '.markdown-editor-react ol',
+        '.markdown-editor-react table',
+        '.markdown-editor-react table th',
+        '.markdown-editor-react table td',
+        '.markdown-editor-react table th > p',
+        '.markdown-editor-react table td > p',
+        '.markdown-editor-react .ProseMirror',
+        '.markdown-editor-react__richtext-content h1',
+        '.markdown-editor-react__richtext-content h2',
+        '.markdown-editor-react__richtext-content h3',
+        '.markdown-editor-react__richtext-content h4',
+        '.markdown-editor-react__richtext-content h5',
+        '.markdown-editor-react__richtext-content h6',
+        '.markdown-editor-react__richtext-content p',
+        '.markdown-editor-react__richtext-content li',
+        '.markdown-editor-react__richtext-content blockquote',
+        '.markdown-editor-react__richtext-content ul',
+        '.markdown-editor-react__richtext-content ol',
+        '.markdown-editor-react__richtext-content table',
+        '.markdown-editor-react__richtext-content table th',
+        '.markdown-editor-react__richtext-content table td'
     ].join(', ');
 
     /* Containers whose children manage their own DOM (mermaid diagrams and most
-       TipTap editors). Plan-rendered TipTap content and Agent Window prompt input
-       are allowed below because they need per-element direction while editing. */
-    var SCAN_EXCLUDE = '.node-mermaid, .tiptap.ProseMirror';
-    var TIPTAP_PLAN_ALLOW = '.plan-editor .tiptap.ProseMirror, .ui-plan-editor .tiptap.ProseMirror, .ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror';
+       TipTap editors). Plan-rendered TipTap, native Markdown preview, and Agent
+       Window prompt input are allowed below because they need per-element
+       direction while editing. */
+    var TIPTAP_RICHTEXT_ALLOW = [
+        '.plan-editor .tiptap.ProseMirror',
+        '.ui-plan-editor .tiptap.ProseMirror',
+        '.ui-rich-text-editor.plan-editor__richtext .tiptap.ProseMirror',
+        '.markdown-editor-react .tiptap.ProseMirror',
+        '.markdown-editor-react__richtext-content.tiptap.ProseMirror',
+        '.markdown-editor-react__richtext-content .tiptap.ProseMirror'
+    ].join(', ');
     var TIPTAP_PROMPT_ALLOW = '.ui-prompt-input .tiptap.ProseMirror, .agent-prompt-input-root .tiptap.ProseMirror, .composer-questionnaire-toolbar .tiptap.ProseMirror';
     var CODE_EXCLUDE = 'code, pre, .markdown-code-outer-container, .cursor-code-block-content, .markdown-lexical-editor-code-block';
-    var PLAN_CONTEXT = '.plan-editor, .ui-plan-editor, .ui-rich-text-editor.plan-editor__richtext';
+    var RICHTEXT_CONTEXT = [
+        '.plan-editor',
+        '.ui-plan-editor',
+        '.ui-rich-text-editor.plan-editor__richtext',
+        '.markdown-editor-react',
+        '.markdown-editor-react__richtext',
+        '.markdown-editor-react__richtext-content'
+    ].join(', ');
+
+    var MARKDOWN_MONACO_SKIP = '.monaco-diff-editor, .terminal, .repl, .debug-hover-widget, .quick-input-widget, .suggest-widget, .editor-widget, .peekview-widget';
+    var MARKDOWN_MODE_IDS = { markdown: true, mdx: true, mdc: true };
+
+    function isMarkdownUri(uri) {
+        if (!uri) return false;
+        var decoded = uri;
+        try {
+            decoded = decodeURIComponent(uri);
+        } catch (e) {}
+        return /\.(md|markdown|mdc|mdx)([?#]|$)/i.test(decoded);
+    }
+
+    function isMarkdownMonacoEditor(editor) {
+        if (!editor || !editor.getAttribute) return false;
+        if (editor.closest && editor.closest(MARKDOWN_MONACO_SKIP)) return false;
+        var node = editor;
+        for (var i = 0; i < 16 && node && node.nodeType === 1; i++) {
+            var mode = node.getAttribute('data-mode-id');
+            if (mode && MARKDOWN_MODE_IDS[mode]) return true;
+            if (isMarkdownUri(node.getAttribute('data-uri'))) return true;
+            node = node.parentElement;
+        }
+        var group = editor.closest && editor.closest('.editor-group-container, .split-view-view');
+        if (group) {
+            var tab = group.querySelector('.tab.active, .tab.selected, .tab[aria-selected="true"]');
+            var label = (tab && (tab.getAttribute('aria-label') || tab.textContent || '')) || '';
+            if (/\.(md|markdown|mdc|mdx)\b/i.test(label)) return true;
+        }
+        return false;
+    }
 
     function isExcludedElement(el) {
         if (!el) return false;
         if (el.closest(CODE_EXCLUDE)) return true;
-        if (el.closest('.monaco-editor') && !el.closest(PLAN_CONTEXT)) return true;
+        var monaco = el.closest('.monaco-editor');
+        if (monaco && !el.closest(RICHTEXT_CONTEXT)) {
+            if (!isMarkdownMonacoEditor(monaco)) return true;
+        }
         if (el.closest('.node-mermaid')) return true;
         var tiptap = el.closest('.tiptap.ProseMirror');
-        return Boolean(tiptap && !tiptap.closest(TIPTAP_PLAN_ALLOW) && !tiptap.closest(TIPTAP_PROMPT_ALLOW));
+        return Boolean(tiptap && !tiptap.closest(TIPTAP_RICHTEXT_ALLOW) && !tiptap.closest(TIPTAP_PROMPT_ALLOW));
     }
 
-    /* Plan ProseMirror content is direction-managed exclusively through generated
-       CSS (see applyPlanDir). Writing a `dir` attribute into ProseMirror-owned DOM
-       makes ProseMirror revert the change and re-render its node views (e.g. the
-       mermaid diagram), which produces a scan -> dir write -> ProseMirror reset
-       loop that flickers the diagram. Never set `dir` directly inside it. */
+    /* Plan and Markdown ProseMirror content is direction-managed exclusively
+       through generated CSS (see applyPlanDir). Writing a `dir` attribute into
+       ProseMirror-owned DOM makes ProseMirror revert the change and re-render
+       its node views (e.g. the mermaid diagram), which produces a scan -> dir
+       write -> ProseMirror reset loop that flickers the diagram. Never set `dir`
+       directly inside it. */
     function isInsidePlanEditorContent(el) {
         if (!el || !el.closest) return false;
         var proseMirror = el.closest('.ProseMirror');
-        return Boolean(proseMirror && proseMirror.closest(PLAN_CONTEXT));
+        return Boolean(proseMirror && proseMirror.closest(RICHTEXT_CONTEXT));
     }
 
     var scanTimer = null;
@@ -881,6 +1043,7 @@
         if (!root || observedRoots.has(root)) return;
         observedRoots.add(root);
         var mo = new MutationObserver(function(mutations) {
+            applyMonacoLinesFromMutations(mutations);
             var dominated = true;
             for (var i = 0; i < mutations.length; i++) {
                 if (!isExcludedMutation(mutations[i])) {
@@ -1062,11 +1225,23 @@
         }
     }
 
+    function getRichTextStyleHost(root) {
+        if (root.classList && root.classList.contains('ProseMirror') && root.parentElement) {
+            return root.parentElement;
+        }
+        return root;
+    }
+
     function ensurePlanRootId(root) {
-        var id = root.getAttribute('data-cursor-rtl-plan-root');
-        if (id) return id;
+        var host = getRichTextStyleHost(root);
+        var id = host.getAttribute('data-cursor-rtl-richtext-root') ||
+            host.getAttribute('data-cursor-rtl-plan-root');
+        if (id) {
+            host.setAttribute('data-cursor-rtl-richtext-root', id);
+            return id;
+        }
         id = String(++planRootCounter);
-        root.setAttribute('data-cursor-rtl-plan-root', id);
+        host.setAttribute('data-cursor-rtl-richtext-root', id);
         return id;
     }
 
@@ -1097,14 +1272,38 @@
         var relativeSelector = getPlanRelativeSelector(el, editor);
         if (!relativeSelector) return;
         rules.push(
-            '[data-cursor-rtl-plan-root="' + rootId + '"] .tiptap.ProseMirror > ' +
+            '[data-cursor-rtl-richtext-root="' + rootId + '"] .tiptap.ProseMirror > ' +
             relativeSelector +
             ' { direction: ' + desiredDir + ' !important; unicode-bidi: isolate !important; text-align: start !important; }'
         );
     }
 
+    function getRichTextRoots() {
+        var nodes = document.querySelectorAll(RICHTEXT_CONTEXT);
+        var roots = [];
+        for (var i = 0; i < nodes.length; i++) {
+            var node = nodes[i];
+            var skip = false;
+            for (var r = 0; r < roots.length; r++) {
+                if (roots[r].contains(node)) {
+                    skip = true;
+                    break;
+                }
+                if (node.contains(roots[r])) {
+                    roots[r] = node;
+                    skip = true;
+                    break;
+                }
+            }
+            if (!skip) {
+                roots.push(node);
+            }
+        }
+        return roots;
+    }
+
     function applyPlanDir() {
-        var roots = document.querySelectorAll(PLAN_CONTEXT);
+        var roots = getRichTextRoots();
         var selector = [
             'h1',
             'h2',
@@ -1124,13 +1323,20 @@
         var rules = [];
         for (var i = 0; i < roots.length; i++) {
             var rootId = ensurePlanRootId(roots[i]);
-            var editors = roots[i].querySelectorAll('.tiptap.ProseMirror, .ProseMirror');
+            var editors = [];
+            if (roots[i].matches && roots[i].matches('.tiptap.ProseMirror, .ProseMirror')) {
+                editors.push(roots[i]);
+            }
+            var nestedEditors = roots[i].querySelectorAll('.tiptap.ProseMirror, .ProseMirror');
+            for (var n = 0; n < nestedEditors.length; n++) {
+                editors.push(nestedEditors[n]);
+            }
             for (var e = 0; e < editors.length; e++) {
                 var editor = editors[e];
                 if (isExcludedElement(editor)) continue;
                 var editorDir = getDesiredDir(editor);
                 rules.push(
-                    '[data-cursor-rtl-plan-root="' + rootId + '"] .tiptap.ProseMirror { direction: ' +
+                    '[data-cursor-rtl-richtext-root="' + rootId + '"] .tiptap.ProseMirror { direction: ' +
                     editorDir +
                     ' !important; text-align: start !important; }'
                 );
@@ -1213,10 +1419,73 @@
         } catch (e) {}
     }
 
+    function getViewLineDir(line) {
+        var text = line.textContent || '';
+        var hasRtl = getMatches(text, RTL_TEXT).length > 0;
+        var hasLtr = getMatches(text, /[A-Za-z]/g).length > 0;
+        if (!hasRtl && !hasLtr) {
+            return line.getAttribute('dir') === 'rtl' ? 'rtl' : 'ltr';
+        }
+        return getTextDir(text);
+    }
+
+    function setViewLineDir(line) {
+        if (!line || !line.setAttribute) return;
+        var desiredDir = getViewLineDir(line);
+        if (line.getAttribute('dir') !== desiredDir) {
+            line.setAttribute('dir', desiredDir);
+            appliedCount++;
+        }
+    }
+
+    function applyMonacoLinesFromMutations(mutations) {
+        for (var i = 0; i < mutations.length; i++) {
+            var mutation = mutations[i];
+            var target = mutation.target;
+            var el = target && (target.nodeType === 1 ? target : target.parentElement);
+            if (!el || !el.closest) continue;
+            var monaco = el.closest('.monaco-editor');
+            if (!monaco || !isMarkdownMonacoEditor(monaco)) continue;
+
+            if (mutation.type === 'childList') {
+                for (var j = 0; j < mutation.addedNodes.length; j++) {
+                    var added = mutation.addedNodes[j];
+                    if (!added || added.nodeType !== 1) continue;
+                    if (added.classList && added.classList.contains('view-line')) {
+                        setViewLineDir(added);
+                    }
+                    if (added.querySelectorAll) {
+                        var nested = added.querySelectorAll('.view-line');
+                        for (var k = 0; k < nested.length; k++) {
+                            setViewLineDir(nested[k]);
+                        }
+                    }
+                }
+            }
+
+            var line = el.classList && el.classList.contains('view-line')
+                ? el
+                : el.closest('.view-line');
+            if (line) setViewLineDir(line);
+        }
+    }
+
+    function applyMonacoMarkdownLineDir() {
+        var editors = document.querySelectorAll('.monaco-editor');
+        for (var i = 0; i < editors.length; i++) {
+            if (!isMarkdownMonacoEditor(editors[i])) continue;
+            var lines = editors[i].querySelectorAll('.view-lines .view-line');
+            for (var j = 0; j < lines.length; j++) {
+                setViewLineDir(lines[j]);
+            }
+        }
+    }
+
     function scanAll() {
         scanRoot(document);
         scanAgentPanels();
         applyPlanDir();
+        applyMonacoMarkdownLineDir();
         try {
             walkShadows(document.documentElement, scanRoot);
         } catch (e) {}
@@ -1235,6 +1504,13 @@
 
     window.addEventListener('focus', scheduleScan);
     document.addEventListener('visibilitychange', scheduleScan);
+    document.addEventListener('input', function(event) {
+        var target = event.target;
+        if (!target || !target.closest) return;
+        var monaco = target.closest('.monaco-editor');
+        if (!monaco || !isMarkdownMonacoEditor(monaco)) return;
+        applyMonacoMarkdownLineDir();
+    }, true);
 
     attachObserver(document.documentElement);
     attachAllCurrentShadowObservers();
